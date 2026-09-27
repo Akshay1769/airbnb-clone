@@ -1,36 +1,22 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Airbnb Listing Recreation
 
-## Getting Started
+A desktop-first recreation of the Mirashya UG10 serviced-apartment listing in Candolim, built with Next.js App Router, TypeScript, and CSS.
 
-First, run the development server:
+## Run
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000`. Run `npm run lint` and `npm run build` to validate changes.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `src/data/listing.ts` contains listing details, room groups, gallery ordering, amenities, and reviews.
+- `src/components/` contains the page header, sticky section bar, booking rail, listing sections, photo tour, and single-photo viewer.
+- `public/images/` contains the listing, host, and nearby-stay image assets used by the page.
+- `architecture/marketplace-architecture.svg` is the production marketplace architecture diagram; `architecture/README.md` explains the scaling decisions.
+- `.github/agents/`, `.github/skills/`, `.github/prompts/`, and `prompts/development-prompts.md` contain the reusable AI workflow artifacts and prompt log.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The photo tour opens from the all-photos button or any hero image. Open a photo inside the tour to use the full-screen viewer; use the arrow keys to move and Escape to close.
